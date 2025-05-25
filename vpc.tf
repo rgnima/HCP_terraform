@@ -57,7 +57,7 @@ resource "aws_security_group" "allow_ports" {
   vpc_id      = aws_vpc.vpc_virginia.id
 
   tags = {
-    Name = "allow_pots"
+    Name = "allow_puertos"
   }
 }
 

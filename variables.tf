@@ -8,10 +8,6 @@ variable "subnets" {
   type        = list(string)
 }
 
-variable "tags" {
-  description = "Tags del proyecto"
-  type        = map(string)
-}
 
 variable "ingress_ports_list" {
   description = "Lista de puertos de entrada"

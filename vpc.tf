@@ -26,30 +26,30 @@ resource "aws_subnet" "private_subnet" {
 
 }
 
-resource "aws_internet_gateway" "gw" {
-  vpc_id = aws_vpc.vpc_virginia.id
+# resource "aws_internet_gateway" "gw" {
+#   vpc_id = aws_vpc.vpc_virginia.id
 
-  tags = {
-    Name = "IGW-VPC-Virginia"
-  }
-}
-resource "aws_route_table" "rt" {
-  vpc_id = aws_vpc.vpc_virginia.id
+#   tags = {
+#     Name = "IGW-VPC-Virginia"
+#   }
+# }
+# resource "aws_route_table" "rt" {
+#   vpc_id = aws_vpc.vpc_virginia.id
 
-  route {
-    cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.gw.id
-  }
+#   route {
+#     cidr_block = "0.0.0.0/0"
+#     gateway_id = aws_internet_gateway.gw.id
+#   }
 
-  tags = {
-    Name = "RT-VPC-Virginia-${local.sufix}"
-  }
-}
+#   tags = {
+#     Name = "RT-VPC-Virginia-${local.sufix}"
+#   }
+# }
 
-resource "aws_route_table_association" "crta_public_subnet" {
-  subnet_id      = aws_subnet.public_subnet.id
-  route_table_id = aws_route_table.rt.id
-}
+# resource "aws_route_table_association" "crta_public_subnet" {
+#   subnet_id      = aws_subnet.public_subnet.id
+#   route_table_id = aws_route_table.rt.id
+# }
 
 resource "aws_security_group" "allow_ports" {
   name        = "allow_tls"

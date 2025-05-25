@@ -7,7 +7,10 @@ variable "subnets" {
   description = "segmentos de red para subntes"
   type        = list(string)
 }
-
+ variable "tags" {
+   description = "Etiquetas"
+   type = map(string)
+ }
 
 variable "ingress_ports_list" {
   description = "Lista de puertos de entrada"

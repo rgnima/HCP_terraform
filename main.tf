@@ -4,5 +4,5 @@ module "s3" {
   # insert required variables here
   project_name = "asob"
   env = "cert"
-  nram = "5"
+  nrandom = 4
 }
